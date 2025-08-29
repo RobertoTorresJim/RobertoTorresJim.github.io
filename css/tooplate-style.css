@@ -512,7 +512,7 @@ p:last-child {
     .progress-bar.color-7 span {
       color: #fff; }
 
-      header.masthead {
+  header.masthead {
   position: relative;
   margin-bottom: 3rem;
   padding-top: calc(8rem + 57px);
