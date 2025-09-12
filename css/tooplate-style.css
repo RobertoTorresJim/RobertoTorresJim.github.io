@@ -18,6 +18,44 @@ h1 {
   font-size: 2.8rem;
 }
 
+b{
+  font-weight: bold;
+}
+
+blockquote{
+  font-size: 22px;
+  font-weight: lighter;
+  font-style: oblique;
+}
+
+.code-box{
+  background-color: #23241f;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  overflow-x: auto;
+  font-family: "Consolas";
+  
+}
+
+.code-keyword{
+  color: #f92672;
+}
+
+.code-text{
+  color: #a6e22e;
+}
+.code-void{
+  color: #66d9ef;
+}
+
+
+.code{
+  font-family: "Consolas";
+  color: white;
+}
+
+
 #tm-bg {
   position: fixed;
   top: 0;

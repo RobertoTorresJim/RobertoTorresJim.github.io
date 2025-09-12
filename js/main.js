@@ -208,6 +208,46 @@
 		}
 	}; // class Item
 
+	const gridHover = document.getElementById('grid-links');
+	const body = document.body;
+
+	const tmBg = document.getElementById("tm-bg");
+	const bgImage = 'img/pop-bg.jpg';
+	const xordImage = 'img/portfolio/porta-1web.png';
+	const tpcImage = 'img/portfolio/tpc-bg.jpg';
+	const inImage = 'img/portfolio/in-bg.jpg';
+	const quamImage = 'img/portfolio/quami-bg-2.png';
+
+	gridHover.addEventListener('mouseover', (event) => {
+		const hoveredElement = event.target.closest('.grid__item');
+		if(hoveredElement && hoveredElement.id)
+		switch(hoveredElement.id){
+			case 'xord-link':
+				console.log("xord bg is selected");
+				tmBg.style.transition = `background-image 5.5s ease-in-out`;
+				tmBg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('${xordImage}')`;
+				break;
+			case 'tpc-link':
+				tmBg.style.transition = `background-image 5.5s ease-in-out`;
+				tmBg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('${tpcImage}')`;
+				break;
+			case 'in-link':
+				tmBg.style.transition = `background-image 5.5s ease-in-out`;
+				tmBg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('${inImage}')`;
+				break;
+			case 'quami-link':
+				tmBg.style.transition = `background-image 5.5s ease-in-out`;
+				tmBg.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('${quamImage}')`;
+				break;
+		};
+	});
+
+	gridHover.addEventListener('mouseout', () => {
+		tmBg.style.transition = `background-image 5.5s ease-in-out`;
+		tmBg.style.backgroundImage = `url('${bgImage}')`;
+	});
+
+
 	const DOM = {};
 	DOM.grid = document.querySelector('.grid');
 	DOM.content = DOM.grid.parentNode;

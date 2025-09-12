@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Principios SOLID</title>
+<!--
+
+
+https://www.tooplate.com/view/2097-pop
+
+-->
+    <!-- load CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">                                   <!--https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="fontawesome/css/fontawesome-all.min.css">                <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>                       <!-- http://kenwheeler.github.io/slick/ -->
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" href="css/tooplate-style.css">                               <!-- Templatemo style -->
+
+    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this in a modern browser such as latest version of Chrome or Microsoft Edge.");</script>
+    
+</head>
+
+<body>
+    <div id="tm-bg"></div>
+        <!-- Navigation
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>-->
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('img/pop-bg.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Los principios SOLID de programación orientada a objetos</h1>
+                            <h2 class="subheading">"Para crear código compprensible, legible y comprobable en el que multiples desarrolladores puedan trabajar en colaboración"</h2>
+                            <span class="meta">
+                                Publicado por
+                                <a href="#!">Roberto Torres J.</a>
+                                en Septiebre 10, 2025
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>Los principios SOLID tiene cinco principios de diseño de clases orientadas a objetos son un conjunto de reglas y mejores prácticas a seguir y diseñar una estructura de  clase.</p>
+                        <p>Estos cinco principios nos ayudan a comprender la necesidad de ciertos patrones de diseño y arquitectura de software en general.</p>
+
+                        <h2 class="section-heading">Antecedentes</h2>
+                        <p>Los principios Solid fueron introducidos por primera vez por el científico informático Robert J. Martin en uno de sus artículos de 2000. Sin embargo el acrónimo SOLID fue introducido más tarde por Michael Feathers.</p>
+                        <p>Estos principios tienen como objetivo crear una codificación limpia por lo cual están estrechamente relacionados con la arquitectura orientada a objetos y patrones de diseño.</p>
+                        <p>Por sus siglas en inglés estos principios son:</p>
+                        <ul>
+                            <li>Principio de responsabilidad única (<b>S</b>ingle Responsability Principle)</li>
+                            <li>Principio Abierto-Cerrado (<b>Open-Closed Principle)</b></li>
+                            <li>Principio de sustitución de Liskov (<b>L</b>iskov Substition Principle)</li>
+                            <li>Principio de segregación de interfaz (<b>I</b>nterface Segregation Principle)</li>
+                            <li>Principio de inversión de dependencia (<b>D</b>ependency Inversion Principle)</li>
+                        </ul>
+                        <blockquote class="blockquote">The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
+                        <h2 class="section-heading">Principio de responsabilidad unica</h2>
+                        <p>Este princpio nos dice que una clase debe hacer una cosa y por lo tanto debe tener una sola razon para cambiar.</p>
+                        <p>Esto es que una clase e sun contenedor de datos, como una clase Libro, o una clase cliente, y tiene algunos campos relacionados con esta entidad, esta deberia cambiar solo cuando cambiamos el modelo de datos. </p>
+                        <p>Para verlo de manera mas practica, considere el siguiente ejemplo:</p>
+                        <div class="code-box">
+                            <code>class Coche{
+                                String marca;
+                                Coche(String marca){this.marca = marca; }
+
+                                String getMarca(){return marca; }
+
+                                void guardaCocheDB(Coche coche){ ... }
+                            }
+                            </code>
+                        </div>
+
+                        <p>Analiza por un minuto y veamos por que este código viola el princpio de responsabilidad única.</p>
+                        <p>Si bien es correcto que la clase coche contenga variables como la marca, el que esta misma clase pueda realizar operaciones de BBDD como guardar un coche está mal ya que se le está dando una nueva responsabilidad a la clase.</p>
+                        <p>Suponiendo que se tuvieran que modificar los metodos para realizar operaciones en la BBDD. En este caso, además de estos cambios, es probale que también se tengan que realizar cambios a los nombres, tipo de propiedades, métodos, etc, lo cual resulta poco eficiente si solo estamos modificando cosas que tengan que ver con la BBDD.</p>
+                        <p>Para tener la misma funcionalidad pero manteniendo el principio de responsabilidad única, lo ideal sería separar esta responsabilidad de guardado en BBDD en otra clase de la siguiente manera:</p>
+                        <div class="code-box">
+                            <code> <span class = "code-keyword">class</span> <span class="code-text">Coche</span>{<br>
+                                &emsp; String marca;<br>
+                                &emsp; Coche(String marca){<span class="code-keyword">this</span>.marca = marca; } <br>
+
+                                &emsp;&emsp;<span class="code-keyword">String</span> <span class="code-text">getMarca</span>(){<span class="code-keyword">return</span> marca; } <br>
+                            } <br>
+                        
+                        <span class = "code-keyword">class</span> <span class=""code-text>CocheDB</span>{ <br>
+                                &emsp;&emsp;<span class="code-void">void </span><span class="code-text">guadaCoche</span>(Coche coche){ ... } <br>
+                                &emsp;&emsp;<span class="code-void">void </span><span class="code-text">eliminaCoche</span>(Coche coche){ ... } <br>
+                        }</code>
+                        </div>
+                        <p>Con este simple cambio ahora si se está cumpliendo el princpio de responsabilidad única, teniendo un programa mucho más cohesivo.</p>
+
+                        <p></p>
+                        <!--<a href="#!"><img class="img-fluid" src="assets/img/post-sample-image.jpg" alt="..." /></a>-->
+                        <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
+                        <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
+                        <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
+                        <p>
+                            Placeholder text by
+                            <a href="http://spaceipsum.com/">Space Ipsum</a>
+                            &middot; Images by
+                            <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <ul class="list-inline text-center">
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#!">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fas fa-circle fa-stack-2x"></i>
+                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2023</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS
+        <script src="js/scripts.js"></script>-->
+    </body>
+</html>
